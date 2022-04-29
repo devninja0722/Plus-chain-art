@@ -1,45 +1,47 @@
-import MainLight from '../components/MainLight';
-import Header from '../components/Header';
-import Hero from '../components/Hero';
-import Pack from '../components/Pack';
-import Roadmap from '../components/Roadmap';
-import YellowTape from '../components/YellowTape';
-import Gallery from '../components/Gallery';
-import Rarity from '../components/Rarity';
-import FAQ from '../components/FAQ';
-import Team from '../components/Team';
-import Footer from '../components/Footer';
-import { useState, useEffect } from 'react';
+import MainLight from '../components/MainLight'
+import Header from '../components/Header'
+import Hero from '../components/Hero'
+import About from '../components/About'
+import PulseChainArt from '../components/PulseChainArt'
+import Roadmap from '../components/Roadmap'
+import YellowTape from '../components/YellowTape'
+import Gallery from '../components/Gallery'
+import Rarity from '../components/Rarity'
+import FAQ from '../components/FAQ'
+import Team from '../components/Team'
+import Footer from '../components/Footer'
+import { useState, useEffect } from 'react'
 
 const Home = () => {
 
-  const [showButton, setShowButton] = useState(false);
-  const [offset, setOffset] = useState(0);
+  const [showButton, setShowButton] = useState(false)
+  const [offset, setOffset] = useState(0)
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
-      setOffset(window.pageYOffset > 500 ? 500 : window.pageYOffset);
+      setOffset(window.pageYOffset > 500 ? 500 : window.pageYOffset)
       if (window.pageYOffset > 300) {
-        setShowButton(true);
+        setShowButton(true)
       } else {
-        setShowButton(false);
+        setShowButton(false)
       }
-    });
-  }, []);
+    })
+  }, [])
 
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
       behavior: 'smooth'
-    });
-  };
+    })
+  }
 
   return (
     <div>
       <MainLight />
-      <Header mT="mt-[-4375px] md:mt-[-6605px] lg:mt-[-6605px]" menu="flex" />
+      <Header mT="mt-[-4385px] md:mt-[-6585px] lg:mt-[-6585px]" menu="flex" />
       <Hero offset={offset} />
-      <Pack />
+      <About />
+      <PulseChainArt />
       <YellowTape />
       <Roadmap />
       <Gallery />
@@ -51,7 +53,7 @@ const Home = () => {
         <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="30" viewBox="0 0 172 172" style={{ fill: "#000000" }}><g fill="none" fillRule="nonzero" stroke="none" strokeWidth="1" strokeLinecap="butt" strokeLinejoin="miter" strokeMiterlimit="10" strokeDasharray="" strokeDashoffset="0" fontFamily="none" fontWeight="none" fontSize="none" textAnchor="none" style={{ mixBlendMode: "normal" }}><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#fafafa"><path d="M85.98925,83.05987l72.5625,42.2475v-26.875l-72.55175,-58.11987l-72.57325,58.11987v26.875z"></path></g></g></svg>
       </button>
     </div>
-  );
+  )
 }
 
-export default Home;
+export default Home

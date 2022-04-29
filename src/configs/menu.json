@@ -1,7 +1,16 @@
 {
-  "menu-item" : [ "About", "Roadmap", "Gallery", "FAQ", "Team"],
+  "menu-item": [
+    "Home",
+    "About",
+    "PulseChainArt",
+    "Richard Heart",
+    "Roadmap",
+    "Team",
+    "Customers",
+    "FAQ"
+  ],
   "discord-link": "https://www.discord.com",
-  "opensea-link": "https://opensea.io/collections/working-dog-club",
+  "opensea-link": "https://opensea.io",
   "instagram-link": "https://www.instagram.com",
   "twitter-link": "https://twitter.com",
   "tiktok-link": "https://www.tiktok.com"
