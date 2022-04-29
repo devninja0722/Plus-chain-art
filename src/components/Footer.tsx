@@ -4,6 +4,7 @@ import OpenSeaIcon from "../assets/svg/opensea";
 import InstagramIcon from "../assets/svg/instagram";
 import TwitterIcon from "../assets/svg/twitter";
 import TiktokIcon from "../assets/svg/tiktok";
+import PulseChainArtLogoBlackBg from "../assets/svg/PulseChainArt-Logo-BlackBg.svg"
 import { useNavigate, useLocation, Link } from 'react-router-dom'
 
 const Footer = () => {
@@ -32,7 +33,7 @@ const Footer = () => {
   return (
     <div className="flex justify-between px-6 lg:px-16 py-1 mt-10 bg-[#0B0B0B]/30 backdrop-blur-[4px] h-[92px] border-t-[1px] border-t-[#353535]">
       <div className="flex gap-[120px]">
-        <div className="ml-0 lg:ml-[80px] text-[20px] flex items-center align-middle font-['Trouble_Font'] font-[400] tracking-[2px] leading-[24px]"><Link to="/">PulsChainArt</Link></div>
+        <div className="ml-0 lg:ml-[80px] text-[20px] flex items-center align-middle font-['Trouble_Font'] font-[400] tracking-[2px] leading-[24px]"><Link to="/"><img src={PulseChainArtLogoBlackBg} alt="logo" width={200} /></Link></div>
         <div className="hidden lg:flex justify-items-center space-x-[30px] items-center">
           {
             MENU_ITEMS && MENU_ITEMS.length > 0 && MENU_ITEMS.map((item) =>
@@ -48,7 +49,7 @@ const Footer = () => {
         <a className={styleAnchor} key="twitter" href={FOOTER["twitter-link"]}><TwitterIcon /></a>
         <a className={styleAnchor} key="tiktok" href={FOOTER["tiktok-link"]}><TiktokIcon /></a>
       </div>
-    </div>
+    </div >
   )
 }
 

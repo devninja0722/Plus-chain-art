@@ -8,7 +8,7 @@ const Terms = () => {
       <div className="border-2 border-b-4 rounded-xl m-auto my-0 lg:mt-10 w-[90%] lg:w-[75%] border-white/50 max-h-[600px] p-4">
         <div className="w-full overflow-auto max-h-[562px] p-2">
           <div className={styleParagraph}>
-            <span className={`${styleBold} text-center`}>
+            <span className={`${styleBold}`}>
               Terms of Sale
             </span>
           </div>
@@ -184,7 +184,7 @@ const Terms = () => {
             </span>
           </div>
           <div className={styleParagraph}>
-            <span className={`${styleBold} text-center`}>
+            <span className={`${styleBold}`}>
               Terms of Sale
             </span>
           </div>
