@@ -1,64 +1,39 @@
-import ROADMAP from "../configs/roadmap.json";
-import PhaseItem from "./utils/PhaseItem";
-import { PhaseBranch12, PhaseBranch23, PhaseBranch34, PhaseBranch41, PhaseMDBrach12, PhaseMDBrach21 } from "../assets/svg/phasebranch";
-
 const Roadmap = () => {
-  var phaseLGItems = [];
-  var phaseMDItems = [];
-  for (let i = 0; i < ROADMAP.length; i++) {
-    var tI = i;
-    if (i % 4 === 2 && i + 1 < ROADMAP.length) tI = i + 1;
-    if (i % 4 === 3) tI = i - 1;
-    var mt = "0px";
-    if (tI >= 2) mt = "-270px";
-    if (tI === 0 && tI === ROADMAP.length - 1) {
-      phaseLGItems.push(<div key={`${tI}blank2`} style={{ marginTop: mt }}></div>);
-    }
-    if (tI % 4 === 2 && tI === ROADMAP.length - 1) {
-      phaseLGItems.push(<div key={`${tI}blank2`} style={{ marginTop: mt }}></div>);
-      phaseLGItems.push(<div key={`${tI}blank2`} style={{ marginTop: mt }}></div>);
-      phaseLGItems.push(<div key={`${tI}blank2`} style={{ marginTop: mt }}></div>);
-    }
-    if (tI % 4 === 3 && tI === ROADMAP.length - 1) {
-      phaseLGItems.push(<div key={`${tI}blank2`} style={{ marginTop: mt }}></div>);
-    }
-    if (tI % 4 >= 2) {
-      if (tI < ROADMAP.length - 1) {
-        let t = tI % 4;
-        phaseLGItems.push(t === 0 ? <div key={tI} style={{ marginTop: mt }}><PhaseBranch12 /></div> : (t === 1 ? <div key={tI} style={{ marginTop: mt }}><PhaseBranch23 /></div> : (t === 2 ? <div key={tI} style={{ marginTop: mt }}><PhaseBranch34 /></div> : <div key={tI} style={{ marginTop: mt }}><PhaseBranch41 /></div>)))
-      }
-      let item = ROADMAP[tI];
-      phaseLGItems.push(<div key={item.name} style={{ marginTop: mt }}><PhaseItem key={item.name} name={item.name} image={item.image} description={item.description} loaded={item.loaded} progress={item.progress} /></div>);
-      if (tI % 2 === 0) phaseLGItems.push(<div key={`${tI}blank`} style={{ marginTop: mt }}></div>);
-    } else {
-      let item = ROADMAP[tI];
-      if (tI % 2 === 0) phaseLGItems.push(<div key={`${tI}blank1`} style={{ marginTop: mt }}></div>);
-      phaseLGItems.push(<div key={item.name} style={{ marginTop: mt }}><PhaseItem key={item.name} name={item.name} image={item.image} description={item.description} loaded={item.loaded} progress={item.progress} /></div>);
-      if (tI < ROADMAP.length - 1) {
-        let t = tI % 4;
-        phaseLGItems.push(t === 0 ? <div key={tI} style={{ marginTop: mt }}><PhaseBranch12 /></div> : (t === 1 ? <div key={tI} style={{ marginTop: mt }}><PhaseBranch23 /></div> : (t === 2 ? <div key={tI} style={{ marginTop: mt }}><PhaseBranch34 /></div> : <div key={tI} style={{ marginTop: mt }}><PhaseBranch41 /></div>)))
-      }
-    }
-    if (tI % 4 === 1 && tI === ROADMAP.length - 1) {
-      phaseLGItems.push(<div key={`${tI}blank2`} style={{ marginTop: mt }}></div>);
-    }
-  }
-  for (let i = 0; i < ROADMAP.length; i++) {
-    let item = ROADMAP[i];
-    let mt = "0";
-    if (i !== 0) mt = "-55px";
-    phaseMDItems.push(<div key={item.name} className="ml-[64px] md:ml-[195px]" style={{ marginTop: mt }}><PhaseItem key={item.name} name={item.name} image={item.image} description={item.description} loaded={item.loaded} progress={item.progress} /></div>);
-    if (i < ROADMAP.length - 1) {
-      phaseMDItems.push(<div key={i} className="mt-[-161px] md:mt-[-116px]">{i % 2 === 0 ? <PhaseMDBrach12 /> : <PhaseMDBrach21 />}</div>)
-    }
-  }
+  const styleParagraph = "flex justify-center mt-[0px] font-['Chakra_Petch'] text-[#7E7E7E] text-[14px] lg:text-[20px] lg:mt-[16px] tracking-[1px] leading-[22.4px]"
+  const styleTitle = "text-left font-bold mt-5 w-[90%] lg:w-[50%]"
+  const styleDetail = "text-left w-[90%] lg:w-[50%] indent-4"
   return (
-    <div className="justify-center mt-8" id="roadmap">
-      <div className="w-[100%] h-[1900px] bg-no-repeat bg-cover bg-none lg:bg-[url('./assets/img/roadmap/back.png')]"></div>
-      <div className="flex justify-center mt-[-1850px] lg:mt-[-1800px] font-['Trouble_Font'] text-[60px] lg:text-[100px] tracking-[5px] leading-[72px] lg:leading-[120px]">Roadmap</div>
-      <div className="flex justify-center">
-        <div className="gap-x-[0] mt-[64px] min-w-[1201px] hidden lg:grid grid-cols-[85px_359px_313px_359px_85px]">{phaseLGItems}</div>
-        <div className="grid justify-items-center gap-0 lg:hidden xs:ml-[0px] ml-[12px]">{phaseMDItems}</div>
+    <div className="justify-center py-10 mt-0 lg:mt-10" id="roadmap">
+      <div className="flex justify-center font-['Trouble_Font'] text-[64px] lg:text-[90px] tracking-wider leading-[120px]">Roadmap</div>
+      <div className={styleParagraph}>
+        <span className={styleTitle}>
+          PULSECHAIN ART (May – June 2022)
+        </span>
+      </div>
+      <div className={styleParagraph}>
+        <span className={styleDetail}>
+          PulseChainArt is a collection that is randomly generated, non-fungible tokens, also known as an "NFT". Owners gain access to community benefits such as additional FREE NFTs and crypto related raffles and prizes. There are 10,000 PulseChainArt and each is completely unique. No two PulseChainArt are the same. They were generated from a smart contract using over 75 different traits. PulseChainArt are minted, stored, and traded on the Ethereum blockchain.
+        </span>
+      </div>
+      <div className={styleParagraph}>
+        <span className={styleTitle}>
+          HEXART (August – September 2022)
+        </span>
+      </div>
+      <div className={styleParagraph}>
+        <span className={styleDetail}>
+          HexArt are randomly generated, non-fungible tokens, also known as an "NFT". Owners gain access to community benefits such as additional FREE NFTs and crypto related raffles and prizes. There will be 10,000 HexArt and each is completely unique. No two are the same. They were generated from a smart contract using over 75 different traits. HexArt are minted, stored, and traded on the Ethereum blockchain.
+        </span>
+      </div>
+      <div className={styleParagraph}>
+        <span className={styleTitle}>
+          PULSEXART (November – December 2022)
+        </span>
+      </div>
+      <div className={styleParagraph}>
+        <span className={styleDetail}>
+          PulseXArt are randomly generated, non-fungible tokens, also known as an "NFT". Owners gain access to community benefits such as additional FREE NFTs and crypto related raffles and prizes. There will be 10,000 PulseXArt and each is completely unique. No two are the same. They were generated from a smart contract using over 75 different traits. PulseXArt are minted, stored, and traded on the Ethereum blockchain.
+        </span>
       </div>
     </div>
   )
