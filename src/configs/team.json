@@ -1,0 +1,14 @@
+[
+  {
+    "role": "Founder",
+    "photo": "founder.png"
+  },
+  {
+    "role": "Project Manager",
+    "photo": "manager.png"
+  },
+  {
+    "role": "Developer",
+    "photo": "developer.png"
+  }
+]

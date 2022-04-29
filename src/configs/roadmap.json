@@ -1,0 +1,30 @@
+[
+  {
+    "name": "PHASE 1",
+    "image": "phase1.png",
+    "description": "Phase 1 is the ultimate working dog Belgian Malinois.",
+    "loaded": 25,
+    "progress": "Lorem ipsum"
+  },
+  {
+    "name": "PHASE 2",
+    "image": "phase2.png",
+    "description": "Next Working Dog Breed will be voted on by the community, developed and released.",
+    "loaded": 50,
+    "progress": "Lorem ipsum"
+  },
+  {
+    "name": "PHASE 3",
+    "image": "phase3.png",
+    "description": "Phase 3 introduces litters of puppies. You will have a random chance of generating a random litter of puppies for each Working Dog you are holding. Puppy Litters will be owned by the original owner of the parent and the Working Dog owner retains rights to the royalties generated from those puppies.",
+    "loaded": 75,
+    "progress": "Lorem ipsum"
+  },
+  {
+    "name": "PHASE 4",
+    "image": "phase4.png",
+    "description": "Phase 4 introduces Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ornare a lorem vitae aliquet. Nulla sed egestas sapien, blandit hendrerit augue. Nullam sagittis lorem id libero rutrum tristique. Donec sed laoreet nulla. Sed laoreet arcu nec nibh semper, et ornare massa laoreet. Fusce malesuada augue feugiat ipsum laoreet euismod.",
+    "loaded": 100,
+    "progress": "Lorem ipsum"
+  }
+]
