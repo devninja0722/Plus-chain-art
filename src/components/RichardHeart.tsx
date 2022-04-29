@@ -2,7 +2,7 @@ const RichardHeart = () => {
   const styleParagraph = "flex justify-center mt-[0px] font-['Chakra_Petch'] text-[#7E7E7E] text-[14px] lg:text-[20px] lg:mt-[16px] tracking-[1px] leading-[22.4px]"
   const styleText = "text-left w-[90%] lg:w-[50%] indent-4"
   return (
-    <div className="justify-center py-10 mt-0 lg:mt-10" id="richardheart">
+    <div className="justify-center py-10 mt-0 lg:mt-10" id="richard heart">
       <div className="flex justify-center font-['Trouble_Font'] text-[64px] lg:text-[90px] tracking-wider leading-[120px]">Richard Heart</div>
       <div className={styleParagraph}>
         <span className={styleText}>
