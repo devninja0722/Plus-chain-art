@@ -1,8 +1,8 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { useEffect, useState } from "react";
-import { InjectedConnector } from "@web3-react/injected-connector";
-import { useWeb3React } from "@web3-react/core";
+// import { InjectedConnector } from "@web3-react/injected-connector";
+// import { useWeb3React } from "@web3-react/core";
 import Header from "../components/Header";
 import ControlButton from "../components/utils/ControlButton";
 import CounterButton from "../components/utils/CounterButton";
@@ -17,8 +17,8 @@ const Mint = () => {
   const [pending, setPending] = useState(false);
 
   const acceptedChains = process.env.NODE_ENV === 'development' ? [1, 3, 4, 5, 42] : [1, 2];
-  const injected = new InjectedConnector({ supportedChainIds: acceptedChains, });
-  const { activate, deactivate, chainId, active, account, library } = useWeb3React();
+  // const injected = new InjectedConnector({ supportedChainIds: acceptedChains, });
+  // const { activate, deactivate, chainId, active, account, library } = useWeb3React();
 
   const onMinus = () => {
     if (count > 1) setCount(count - 1);
@@ -35,18 +35,18 @@ const Mint = () => {
   }
   const onConnect = async () => {
     setPending(true);
-    await activate(injected);
+    // await activate(injected);
     setPending(false);
     setConnected(true);
   }
 
-  useEffect(() => {
-    if (account && active) {
-      setConnected(true);
-    } else {
-      setConnected(false);
-    }
-  }, [acceptedChains, account, active, chainId]);
+  // useEffect(() => {
+  // if (account && active) {
+  // setConnected(true);
+  // } else {
+  // setConnected(false);
+  // }
+  // }, [acceptedChains, account, active, chainId]);
 
   const onMint = async () => {
     setPending(true);
@@ -59,9 +59,9 @@ const Mint = () => {
       <div>
         <div className="mt-[30px] md:mt-[60px]">
           <div className="flex justify-center font-[900] text-center text-[48px] leading-[80px] lg:text-[100px] md:leading-[130px] pt-[20px] tracking-[3px]">0/10000</div>
-          <div className={(account ? "opacity-1" : "opacity-0") + " transition-all duration-300 ease-in-out flex justify-center font-[400] text-center text-[16px] leading-[20.8px] text-[#0094FF] mt-[10px]"}>
-            {account ? abridgeAddress(account) : "Please Connect your Wallet"}
-          </div>
+          {/* <div className={(account ? "opacity-1" : "opacity-0") + " transition-all duration-300 ease-in-out flex justify-center font-[400] text-center text-[16px] leading-[20.8px] text-[#0094FF] mt-[10px]"}> */}
+          {/* {account ? abridgeAddress(account) : "Please Connect your Wallet"} */}
+          {/* </div> */}
           <div className="flex justify-center font-[400] text-center text-[40px] leading-[52px] lg:text-[50px] md:leading-[65px] pt-[20px] tracking-[3px]">{balance.toString() + " ETH"}</div>
           <div className="flex justify-center font-[400] text-center text-[16px] leading-[21px] lg:text-[14px] md:leading-[18.2px] pt-[20px] tracking-[1px]">(Excluding gas fees)</div>
         </div>
