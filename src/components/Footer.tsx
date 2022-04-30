@@ -1,9 +1,9 @@
 import FOOTER from "../configs/menu.json"
 import DiscordIcon from "../assets/svg/discord";
-import OpenSeaIcon from "../assets/svg/opensea";
-import InstagramIcon from "../assets/svg/instagram";
+// import OpenSeaIcon from "../assets/svg/opensea";
+// import InstagramIcon from "../assets/svg/instagram";
 import TwitterIcon from "../assets/svg/twitter";
-import TiktokIcon from "../assets/svg/tiktok";
+// import TiktokIcon from "../assets/svg/tiktok";
 import PulseChainArtLogoBlackBg from "../assets/svg/PulseChainArt-Logo-BlackBg.svg"
 import { useNavigate, useLocation, Link } from 'react-router-dom'
 
@@ -43,11 +43,11 @@ const Footer = () => {
         </div>
       </div>
       <div className="flex justify-items-center space-x-[18px] lg:space-x-[15px] mr-[0px] lg:mr-[80px] items-center">
-        <a className={styleAnchor} key="discord" href={FOOTER["discord-link"]}><DiscordIcon /></a>
-        <a className={styleAnchor} key="opensea" href={FOOTER["opensea-link"]}><OpenSeaIcon /></a>
-        <a className={styleAnchor} key="instagram" href={FOOTER["instagram-link"]}><InstagramIcon /></a>
-        <a className={styleAnchor} key="twitter" href={FOOTER["twitter-link"]}><TwitterIcon /></a>
-        <a className={styleAnchor} key="tiktok" href={FOOTER["tiktok-link"]}><TiktokIcon /></a>
+        <a className={styleAnchor} key="discord" href={FOOTER["discord-link"]} target="_blank" rel="noreferrer"><DiscordIcon /></a>
+        {/* <a className={styleAnchor} key="opensea" href={FOOTER["opensea-link"]} target="_blank" rel="noreferrer"><OpenSeaIcon /></a> */}
+        {/* <a className={styleAnchor} key="instagram" href={FOOTER["instagram-link"]} target="_blank" rel="noreferrer"><InstagramIcon /></a> */}
+        <a className={styleAnchor} key="twitter" href={FOOTER["twitter-link"]} target="_blank" rel="noreferrer"><TwitterIcon /></a>
+        {/* <a className={styleAnchor} key="tiktok" href={FOOTER["tiktok-link"]} target="_blank" rel="noreferrer"><TiktokIcon /></a> */}
       </div>
     </div >
   )

@@ -1,9 +1,9 @@
 import HEADER from "../configs/menu.json"
 import DiscordIcon from "../assets/svg/discord";
-import OpenSeaIcon from "../assets/svg/opensea";
-import InstagramIcon from "../assets/svg/instagram";
+// import OpenSeaIcon from "../assets/svg/opensea";
+// import InstagramIcon from "../assets/svg/instagram";
 import TwitterIcon from "../assets/svg/twitter";
-import TiktokIcon from "../assets/svg/tiktok";
+// import TiktokIcon from "../assets/svg/tiktok";
 import PulseChainArtLogoBlackBg from "../assets/svg/PulseChainArt-Logo-BlackBg.svg"
 import { useNavigate, useLocation } from 'react-router-dom'
 import { Link } from "react-router-dom";
@@ -29,7 +29,6 @@ const Header = ({ mT, menu }: Props) => {
       if (headerHeight === 0) headerHeight = 70
       window.scrollTo({
         top: topPos,
-        left: 100,
         behavior: 'smooth'
       })
     } else {
@@ -48,11 +47,11 @@ const Header = ({ mT, menu }: Props) => {
         }
       </div>
       <div className="flex justify-items-center space-x-[18px] lg:space-x-[15px] mr-[0px] lg:mr-[80px] items-center">
-        <a className={styleAnchor} key="discord" href={HEADER["discord-link"]}><DiscordIcon /></a>
-        <a className={styleAnchor} key="opensea" href={HEADER["opensea-link"]}><OpenSeaIcon /></a>
-        <a className={styleAnchor} key="instagram" href={HEADER["instagram-link"]}><InstagramIcon /></a>
-        <a className={styleAnchor} key="twitter" href={HEADER["twitter-link"]}><TwitterIcon /></a>
-        <a className={styleAnchor} key="tiktok" href={HEADER["tiktok-link"]}><TiktokIcon /></a>
+        <a className={styleAnchor} key="discord" href={HEADER["discord-link"]} target="_blank" rel="noreferrer"><DiscordIcon /></a>
+        {/* <a className={styleAnchor} key="opensea" href={HEADER["opensea-link"]} target="_blank" rel="noreferrer"><OpenSeaIcon /></a> */}
+        {/* <a className={styleAnchor} key="instagram" href={HEADER["instagram-link"]} target="_blank" rel="noreferrer"><InstagramIcon /></a> */}
+        <a className={styleAnchor} key="twitter" href={HEADER["twitter-link"]} target="_blank" rel="noreferrer"><TwitterIcon /></a>
+        {/* <a className={styleAnchor} key="tiktok" href={HEADER["tiktok-link"]} target="_blank" rel="noreferrer"><TiktokIcon /></a> */}
       </div>
     </div>
   )
