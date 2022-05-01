@@ -3,7 +3,7 @@ import richard1 from "../assets/img/hero/richard-01.png";
 import richard2 from "../assets/img/hero/richard-02.png";
 import richard3 from "../assets/img/hero/richard-03.png";
 import richard4 from "../assets/img/hero/richard-04.png";
-import PulseChainArtOnlyTextBlackBg from "../assets/svg/PulseChainArt-OnlyText-BlackBg.svg"
+import PulseChainArtLogoBlackBg from "../assets/svg/PulseChainArt-Logo-BlackBg.svg"
 import ControlButton from "./utils/ControlButton";
 // import { useNavigate } from 'react-router-dom'
 
@@ -20,7 +20,7 @@ const Hero = ({ offset }: Props) => {
 
   return (
     <div className="justify-center bg-cover bg-[url('./assets/img/hero/md-bg.png')] lg:bg-none pb-[50px] lg:pb-[0px] -mt-20" id="home">
-      <div className="flex justify-center font-['Trouble_Font'] text-[64px] lg:text-[200px] mt-[-60px] pt-[80px] lg:mt-[-30px] tracking-[3px] leading-[240px] min-h-[200px] mb-[30px]"><img src={PulseChainArtOnlyTextBlackBg} alt="text" className="w-[80%]" /></div>
+      <div className="flex justify-center font-['Trouble_Font'] text-[64px] lg:text-[200px] mt-[-60px] pt-[80px] lg:mt-[-30px] tracking-[3px] leading-[240px] min-h-[200px] mb-[30px]"><img src={PulseChainArtLogoBlackBg} alt="text" className="w-[80%]" /></div>
       <div className="ml-[100px] lg:ml-0 flex items-end justify-center mt-[-75px] z-[20] lg:-mt-24 space-x-[-100px] lg:space-x-[-60px] transition-all duration-350 ease-in" style={{ transform: `translateY(${(offset * 0.3 > 80 ? 80 : offset * 0.3)}px)` }}>
         <img src={richard4} alt="richard4" style={{ transform: `rotate(${offset * -0.01}deg) translateX(${offset * -0.2}px)`, filter: `blur(${offset * 0.008}px)` }} className="hidden transition-all ease-in lg:flex duration-350" />
         <img src={richard1} alt="richard1" className="hidden lg:flex w-[280px] h-[280px] lg:w-[480px] lg:h-[480px] transition-all duration-350 ease-in" />
