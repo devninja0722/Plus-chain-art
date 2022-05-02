@@ -4,9 +4,9 @@ import DiscordIcon from "../assets/svg/discord";
 // import InstagramIcon from "../assets/svg/instagram";
 import TwitterIcon from "../assets/svg/twitter";
 // import TiktokIcon from "../assets/svg/tiktok";
-import PulseChainArtLogoBlackBg from "../assets/svg/PulseChainArt-Logo-BlackBg.svg"
+// import PulseChainArtLogoBlackBg from "../assets/svg/PulseChainArt-Logo-BlackBg.svg"
 import { useNavigate, useLocation } from 'react-router-dom'
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 type Props = {
   mT: any;
@@ -38,7 +38,7 @@ const Header = ({ mT, menu }: Props) => {
 
   return (
     <div className={"flex justify-between px-6 lg:px-16 " + mT + " bg-[#0B0B0B]/0 backdrop-blur-[0px]"} id="header">
-      <div className="ml-0 lg:ml-[80px] text-[20px] font-['Trouble_Font'] font-[400] tracking-[2px] leading-[24px]"><Link to="/"><img src={PulseChainArtLogoBlackBg} alt="logo" width={200} /></Link></div>
+      {/* <div className="ml-0 lg:ml-[80px] text-[20px] font-['Trouble_Font'] font-[400] tracking-[2px] leading-[24px]"><Link to="/"><img src={PulseChainArtLogoBlackBg} alt="logo" width={200} /></Link></div> */}
       <div className={"hidden lg:" + menu + " justify-items-center space-x-[30px] items-center"}>
         {
           MENU_ITEMS && MENU_ITEMS.length > 0 && MENU_ITEMS.map((item) =>
