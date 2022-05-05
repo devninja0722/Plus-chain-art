@@ -11,6 +11,8 @@ type Props = {
   offset: any;
 };
 
+const pulseContract = "https://etherscan.io/address/0x8a1658607793276301a2769bf49b16d98ac16fd8"
+
 const Hero = ({ offset }: Props) => {
   // const navigate = useNavigate();
 
@@ -28,10 +30,13 @@ const Hero = ({ offset }: Props) => {
         <img src={richard2} alt="richard2" className="flex w-[280px] h-[280px] lg:w-[480px] lg:h-[480px] transition-all duration-350 ease-in" />
         <img src={richard3} alt="richard3" style={{ transform: `rotate(${offset * 0.01}deg) translateX(${offset * 0.2}px)`, filter: `blur(${offset * 0.008}px)` }} className="hidden transition-all ease-in lg:flex duration-350" />
       </div>
-      <div className="grid lg:flex lg:justify-center mt-[-15px] z-[10] lg:mt-[-15px] gap-y-[0px] space-x-[0px] lg:space-x-[30px]">
+      <div className="grid lg:flex justify-center mt-[-15px] z-[10] lg:mt-[-15px] gap-y-[0px] space-x-[0px] lg:space-x-[30px]">
         {/* <ControlButton key="Mint Control" clickHandler={onMint} buttonCaption="Mint" /> */}
-        <a href={LINKS["twitter-link"]} target="_blank" rel="noreferrer" className="z-50"><ControlButton key="Discord Control" buttonCaption="Join Twitter" /></a>
+        <a href={LINKS["twitter-link"]} target="_blank" rel="noreferrer" className="z-50"><ControlButton key="Twitter Control" buttonCaption="Join Twitter" /></a>
         <a href={LINKS["discord-link"]} target="_blank" rel="noreferrer" className="z-50"><ControlButton key="Discord Control" buttonCaption="Join Discord" /></a>
+      </div>
+      <div className="flex justify-center">
+        <a href={pulseContract} target="_blank" rel="noreferrer" className="z-50"><ControlButton key="Contract" buttonCaption="View Contract" /></a>
       </div>
     </div>
   )

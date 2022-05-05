@@ -1,7 +1,5 @@
 import HEADER from "../configs/menu.json"
 
-const pulseContract = "https://etherscan.io/address/0x8a1658607793276301a2769bf49b16d98ac16fd8"
-
 const About = () => {
   const anchorStyle = "underline transition-all duration-150 ease-out underline-offset-2 hover:underline-offset-[3px]"
   return (
@@ -9,7 +7,7 @@ const About = () => {
       <div className="flex justify-center font-['Trouble_Font'] text-[74px] lg:text-[90px] tracking-wider leading-[120px]">About</div>
       <div className="flex justify-center mt-[0px] font-['Chakra_Petch'] text-[#7E7E7E] text-[16px] lg:text-[20px] lg:mt-[16px] tracking-[1px] leading-[22.4px]">
         <span className="text-center max-w-[90%] lg:max-w-[50%]">
-          All PulseChainers, PulseXers and Hexicans love Richard Heart and <b><a href={pulseContract} target="_blank" rel="noreferrer" className={anchorStyle}>PULSECHAIN ART</a></b>
+          All PulseChainers, PulseXers and Hexicans love Richard Heart and <b>PULSECHAIN ART</b>
         </span>
       </div>
       <div className="flex justify-center mt-[8px] lg:mt-[16px] font-['Chakra_Petch'] text-[#7E7E7E] text-[16px] lg:text-[20px] tracking-[1px] leading-[25.2px]">
