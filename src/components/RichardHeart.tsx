@@ -1,9 +1,22 @@
+import InstagramIcon from "../assets/svg/instagram"
+import LinkIcon from "../assets/svg/link"
+import TwitterIcon from "../assets/svg/twitter"
+import YoutubeIcon from "../assets/svg/youtube"
+
 const RichardHeart = () => {
   const styleParagraph = "flex justify-center mt-[0px] font-['Chakra_Petch'] text-[#7E7E7E] text-[14px] lg:text-[20px] lg:mt-[16px] tracking-[1px] leading-[22.4px]"
   const styleText = "text-left w-[90%] lg:w-[50%] indent-4"
+  const styleAnchor = "fill-[#FAFAFA] hover:fill-[#0094FF] transition-all duration-150 ease-out scale-[1.2] mt-1"
+
   return (
     <div className="justify-center py-10 mt-0 lg:mt-10" id="richard heart">
       <div className="flex justify-center font-['Trouble_Font'] text-[64px] lg:text-[90px] tracking-wider leading-[120px]">Richard Heart</div>
+      <div className="flex items-center justify-center gap-4">
+        <a className={styleAnchor} href="https://richardheart.com/" target="_blank" rel="noreferrer"><LinkIcon /></a>
+        <a className={styleAnchor} href="https://twitter.com/RichardHeartWin/" target="_blank" rel="noreferrer"><TwitterIcon /></a>
+        <a className={styleAnchor} href="https://www.youtube.com/RichardHeart/" target="_blank" rel="noreferrer"><YoutubeIcon /></a>
+        <a className={styleAnchor} href="https://www.instagram.com/richardheartofficial/?hl=en/" target="_blank" rel="noreferrer"><InstagramIcon /></a>
+      </div>
       <div className={styleParagraph}>
         <span className={styleText}>
           Richard Heart is one of the innovators working to expand the worldwide reach of cryptocurrency. He is the face of HEX, PulseChain and PulseX. Richard's approach started off with the launching of the project, HEX. Project HEX is a novel method that cuts out the middleman and puts more money in the buyer's pocket. He then introduced PulseChain and PulseX.
