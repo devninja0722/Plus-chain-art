@@ -42,7 +42,7 @@ const PulseChainArt = () => {
       </div>
       <div className={styleParagraph}>
         <span className={styleAnswer}>
-          <u>Enrich ERC20 and NFT users.</u> The launch of PulseChain is the largest airdrop in history. Thousands of Ethereum based tokens and NFTs receive their free PulseChain versions. This new gold rush contains the value discovery of thousands of tokens and NFTs on PulseChain. This is a big opportunity to be a whale of ERC20s or NFTs.
+          <u>Enrich ERC20 and NFT users.</u> Thousands of Ethereum based tokens and NFTs receive their free PulseChain versions. This new gold rush contains the value discovery of thousands of tokens and NFTs on PulseChain. This is a big opportunity to be a whale of ERC20s or NFTs.
         </span>
       </div>
       <div className={styleParagraph}>
@@ -57,7 +57,7 @@ const PulseChainArt = () => {
       </div>
       <div className={styleParagraph}>
         <span className={styleAnswer}>
-          <u>Remove Pollution.</u> By replacing proof of work miners with proof of stake validators, PulseChain doesn't burn "waste" any energy making it environmentally friendly.
+          <u>Remove Pollution.</u> By replacing proof of work miners with validators, PulseChain doesn't burn "waste" any energy making it environmentally friendly.
         </span>
       </div>
       <div className={styleParagraph}>
@@ -67,7 +67,7 @@ const PulseChainArt = () => {
       </div>
       <div className={styleParagraph}>
         <span className={styleAnswer}>
-          <u>Empower PulseChain holders.</u> PulseChain's native token $PLS can be staked and delegated to validators that reward the delegators with the largest percentage of fees.
+          <u>Empower PulseChain holders.</u> PulseChain's native token $PLS can be delegated to validators that reward the delegators with the largest percentage of fees.
         </span>
       </div>
     </div>

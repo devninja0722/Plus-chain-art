@@ -69,7 +69,7 @@ const RichardHeart = () => {
       </div>
       <div className={styleParagraph}>
         <span className={styleText}>
-          ●	Mint even more millions in free money by getting people to use Uniswap, 1inch, and Tornado.Cash early, qualifying them for their free airdrops.
+          ●	Mint even more millions in free money by getting people to use Uniswap, 1inch, and Tornado.Cash early.
         </span>
       </div>
       <div className={styleParagraph}>
@@ -79,7 +79,7 @@ const RichardHeart = () => {
       </div>
       <div className={styleParagraph}>
         <span className={styleText}>
-          ●	Take control of their own keys so centralized exchanges can't rob them and use decentralized exchanges that remove counterparty risk instead.
+          ●	Take control of their own keys so centralized exchanges can't rob them and use exchanges that remove counterparty risk instead.
         </span>
       </div>
       <div className={styleParagraph}>
