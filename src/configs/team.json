@@ -1,14 +1,30 @@
 [
   {
-    "role": "Founder",
-    "photo": "founder.png"
+    "name": "Baviar",
+    "twitter": "https://twitter.com/MYRH4HEXPLSPLSX",
+    "linkedin": "",
+    "other": "",
+    "photo": "baviar.png"
   },
   {
-    "role": "Project Manager",
-    "photo": "manager.png"
+    "name": "Tanya",
+    "twitter": "https://twitter.com/TanyaCryptoGal",
+    "linkedin": "",
+    "other": "",
+    "photo": "tanya.png"
   },
   {
-    "role": "Developer",
-    "photo": "developer.png"
+    "name": "Hendra",
+    "twitter": "https://twitter.com/dorarpol",
+    "linkedin": "",
+    "other": "https://www.deviantart.com/dorarpol",
+    "photo": "hendra.png"
+  },
+  {
+    "name": "William",
+    "twitter": "",
+    "linkedin": "https://www.linkedin.com/in/william-smith-45334b205/",
+    "other": "",
+    "photo": "william.png"
   }
 ]
