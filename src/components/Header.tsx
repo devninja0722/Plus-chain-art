@@ -3,6 +3,7 @@ import DiscordIcon from "../assets/svg/discord";
 // import OpenSeaIcon from "../assets/svg/opensea";
 // import InstagramIcon from "../assets/svg/instagram";
 import TwitterIcon from "../assets/svg/twitter";
+import TelegramIcon from "../assets/svg/telegram";
 // import TiktokIcon from "../assets/svg/tiktok";
 // import PulseChainArtLogoBlackBg from "../assets/svg/PulseChainArt-Logo-BlackBg.svg"
 import { useNavigate, useLocation } from 'react-router-dom'
@@ -51,7 +52,7 @@ const Header = ({ mT, menu }: Props) => {
         {/* <a className={styleAnchor} key="opensea" href={HEADER["opensea-link"]} target="_blank" rel="noreferrer"><OpenSeaIcon /></a> */}
         {/* <a className={styleAnchor} key="instagram" href={HEADER["instagram-link"]} target="_blank" rel="noreferrer"><InstagramIcon /></a> */}
         <a className={styleAnchor} key="twitter" href={HEADER["twitter-link"]} target="_blank" rel="noreferrer"><TwitterIcon /></a>
-        {/* <a className={styleAnchor} key="tiktok" href={HEADER["tiktok-link"]} target="_blank" rel="noreferrer"><TiktokIcon /></a> */}
+        <a className={styleAnchor} key="telegram" href={HEADER["telegram-link"]} target="_blank" rel="noreferrer"><TelegramIcon /></a>
       </div>
     </div>
   )

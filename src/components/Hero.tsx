@@ -32,6 +32,7 @@ const Hero = ({ offset }: Props) => {
       </div>
       <div className="grid lg:flex justify-center mt-[-15px] z-[10] lg:mt-[-15px] gap-y-[0px] space-x-[0px] lg:space-x-[30px]">
         {/* <ControlButton key="Mint Control" clickHandler={onMint} buttonCaption="Mint" /> */}
+        <a href={LINKS["telegram-link"]} target="_blank" rel="noreferrer" className="z-50"><ControlButton key="Telegram Control" buttonCaption="Join Telegram" /></a>
         <a href={LINKS["twitter-link"]} target="_blank" rel="noreferrer" className="z-50"><ControlButton key="Twitter Control" buttonCaption="Join Twitter" /></a>
         <a href={LINKS["discord-link"]} target="_blank" rel="noreferrer" className="z-50"><ControlButton key="Discord Control" buttonCaption="Join Discord" /></a>
       </div>
