@@ -1,14 +1,13 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { createContext, useCallback, useEffect, useState } from "react";
 import Web3Modal from "web3modal";
 // import Web3 from "web3"
 import { ethers } from "ethers";
 import { providerOptions } from "../constants/providers";
+import { ChainId, ChainUrl } from "../constants/chains";
 import { toast } from "react-toastify";
 
-let EthereumChainId = 1;
-if (process.env.REACT_APP_ENV === "development") {
-  EthereumChainId = 4;
-}
+let EthereumChainId = process.env.REACT_APP_ENV === "development" ? ChainId.Rinkeby : ChainId.Ethereum
 
 interface IWeb3ModalContext {
   ethersInstance: any | null;
@@ -67,6 +66,12 @@ export const Web3ModalProvider = (props: any) => {
     setSigner(null);
     setConnected(false)
     setProvider(null)
+
+    toast.warning(`Wallet is disconnected`, {
+      position: toast.POSITION.BOTTOM_RIGHT,
+      autoClose: 4000,
+      closeOnClick: true,
+    });
   }, [])
 
   const disconnect = useCallback(
@@ -82,6 +87,35 @@ export const Web3ModalProvider = (props: any) => {
     },
     [provider, resetWeb3]
   );
+
+  const switchChain = useCallback(async function () {
+    try {
+      await window.ethereum.request({
+        method: "wallet_switchEthereumChain",
+        params: [{ chainId: "0x" + EthereumChainId.toString(16) }], // chainId must be in hexadecimal numbers
+      });
+      connect()
+    } catch ({ code, message }) {
+      if (code === 4902) {
+        try {
+          await window.ethereum.request({
+            method: "wallet_addEthereumChain",
+            params: [
+              {
+                chainId: "0x" + EthereumChainId.toString(16),
+                rpcUrl: ChainUrl[EthereumChainId],
+              },
+            ],
+          });
+          connect()
+        } catch ({ code, message }) {
+          disconnect()
+        }
+      } else {
+        disconnect()
+      }
+    }
+  }, [])
 
   const connect = useCallback(async () => {
     let _provider;
@@ -101,9 +135,11 @@ export const Web3ModalProvider = (props: any) => {
       );
       return;
     }
-    if (_provider === null) return;
+    if (_provider === null) {
+      disconnect()
+      return;
+    }
 
-    //============================================================================================================//
     const ethersProviderInstance = new ethers.providers.Web3Provider(_provider);
     setEthersInstance(ethersProviderInstance);
     // await ethersProviderInstance.send("eth_requestAccounts", [])
@@ -112,26 +148,31 @@ export const Web3ModalProvider = (props: any) => {
     const _account = await signer.getAddress().then((address: any) => {
       return address;
     });
+
     const _chainId = (await ethersProviderInstance.getNetwork()).chainId;
-    //===========================================================================================================//
     if (_chainId !== EthereumChainId) {
       toast.warn(`Please connect to Ethereum Network`, {
         position: toast.POSITION.BOTTOM_RIGHT,
         autoClose: 4000,
         closeOnClick: true,
       });
-      disconnect();
+      // disconnect();
+      await switchChain();
       return;
     }
+    toast.success(`Connected to Ethereum Network`, {
+      position: toast.POSITION.BOTTOM_RIGHT,
+      autoClose: 4000,
+      closeOnClick: true,
+    });
     setAccount(String(_account));
     setChainId(_chainId);
     setConnected(true);
-  }, [disconnect]);
+  }, []);
 
   useEffect(() => {
     if (provider?.on) {
       const handleAccountsChanged = (accounts: string[]) => {
-        console.log("accountsChanged", accounts);
         setAccount(accounts[0]);
         chainId === EthereumChainId ? setAccount(accounts[0]) : setAccount(null);
       };
@@ -139,20 +180,20 @@ export const Web3ModalProvider = (props: any) => {
       const handleChainChanged = async (_hexChainId: string) => {
         setChainId(parseInt(_hexChainId, 16));
         if (parseInt(_hexChainId, 16) !== EthereumChainId) {
-          toast.warn(`Please connect to Ethereum Network`, {
+          toast.warn(`Please change network to Ethereum`, {
             position: toast.POSITION.BOTTOM_RIGHT,
             autoClose: 4000,
             closeOnClick: true,
           });
-          setConnected(false);
-          disconnect();
+          await switchChain();
+          // disconnect();
           return;
         }
-        toast.success("Connected to Ethereum Network", {
-          position: toast.POSITION.BOTTOM_RIGHT,
-          autoClose: 4000,
-          closeOnClick: true,
-        })
+        // toast.success("Connected to Ethereum Network", {
+        //   position: toast.POSITION.BOTTOM_RIGHT,
+        //   autoClose: 4000,
+        //   closeOnClick: true,
+        // })
       };
 
       const handleDisconnect = async (error: { code: number; message: string }) => {
@@ -177,15 +218,6 @@ export const Web3ModalProvider = (props: any) => {
     return () => { };
   }, [provider, disconnect, chainId, resetWeb3]);
 
-  useEffect(() => {
-    if (connected) {
-      toast.success("Connected to Ethereum Network", {
-        position: toast.POSITION.BOTTOM_RIGHT,
-        autoClose: 4000,
-        closeOnClick: true,
-      })
-    }
-  }, [connected]);
   // Auto connect to the cached provider
   useEffect(() => {
     if (web3Modal.cachedProvider) {
