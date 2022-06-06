@@ -1,4 +1,4 @@
-import TEAM from "../configs/team.json"
+import TEAM from "../constants/team.json"
 import TeamLight from "../assets/svg/teamlight.svg";
 import TeamCarousel from "./utils/TeamCarousel";
 

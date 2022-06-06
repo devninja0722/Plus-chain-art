@@ -1,4 +1,4 @@
-import LINKS from "../configs/menu.json"
+import LINKS from "../constants/menu.json"
 import richard1 from "../assets/img/hero/richard-01.png";
 import richard2 from "../assets/img/hero/richard-02.png";
 import richard3 from "../assets/img/hero/richard-03.png";

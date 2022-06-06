@@ -1,4 +1,4 @@
-import TEAMDATA from "../configs/team.json"
+import TEAMDATA from "../constants/team.json"
 import TwitterIcon from "../assets/svg/twitter"
 import LinkedinIcon from "../assets/svg/linkedin"
 import LinkIcon from "../assets/svg/link"

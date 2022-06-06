@@ -1,4 +1,6 @@
 import { useEffect, useState, useContext } from "react";
+import { toast } from "react-toastify";
+import { ethers } from "ethers";
 import "react-toastify/dist/ReactToastify.css";
 import { Web3ModalContext } from "../contexts/Web3ModalProvider";
 import Header from "../components/Header";
@@ -6,11 +8,16 @@ import ControlButton from "../components/utils/ControlButton";
 import CounterButton from "../components/utils/CounterButton";
 import richard01 from "../assets/img/mint/richard-01.png"
 import richard02 from "../assets/img/mint/richard-02.png"
+import PULSE_JSON from "../constants/PulseChainArtNFT.json";
+import { ChainId, ChainUrl } from "../constants/chains";
 
 const Mint = () => {
-  const { connect, disconnect, account, connected } = useContext(Web3ModalContext);
+  const { connect, disconnect, account, connected, signer } = useContext(Web3ModalContext);
 
-  const [balance, setBalance] = useState(0.05);
+  const [minted, setMinted] = useState(0);
+  const [supply, setSupply] = useState(10000);
+  const [wlPrice, setWLPrice] = useState(0.03);
+  const [pPrice, setPPrice] = useState(0.05);
   const [count, setCount] = useState(1);
 
   const [pending, setPending] = useState(false);
@@ -27,20 +34,60 @@ const Mint = () => {
     setPending(false);
   }
 
-  const handleMint = async () => {
+  const handlePMint = async () => {
+    if (!signer) return;
     setPending(true);
-    setTimeout(() => setPending(false), 1000);
+    let pulseNFT = new ethers.Contract(PULSE_JSON.address, JSON.stringify(PULSE_JSON.abi), signer);
+    try {
+      let tx = await (await pulseNFT.pMint(count, { value: ethers.utils.parseEther(Number(count * pPrice).toString()) })).wait();
+
+      toast.success(`PulseChainArt #${Number(tx.logs[0].topics[3])} is minted.`, {
+        position: toast.POSITION.BOTTOM_RIGHT,
+        autoClose: 4000,
+        closeOnClick: true,
+      });
+    } catch (e: any) {
+      if (e?.code === 4001) {
+        toast.error(`User denied transaction`, {
+          position: toast.POSITION.BOTTOM_RIGHT,
+          autoClose: 4000,
+          closeOnClick: true,
+        });
+      }
+    }
+    setPending(false)
   }
+
+  useEffect(() => {
+
+    const getContractInfo = async () => {
+      let EthereumChainId = process.env.REACT_APP_ENV === "development" ? ChainId.Rinkeby : ChainId.Ethereum
+
+      let provider = new ethers.providers.JsonRpcProvider(
+        ChainUrl[EthereumChainId]
+      );
+
+      let pulseNFT = new ethers.Contract(PULSE_JSON.address, JSON.stringify(PULSE_JSON.abi), provider);
+
+      let _mintID = await pulseNFT.nextMintId();
+      setMinted(Number(_mintID));
+
+      let _totalSupply = await pulseNFT.totalSupply();
+      setSupply(Number(_totalSupply));
+    }
+
+    getContractInfo();
+  }, [pending])
 
   return (
     <>
       <Header mT="mt-[10px] lg:mt-[30px]" menu="hidden" />
       <div className="mt-[30px] md:mt-[60px]">
-        <div className="flex justify-center font-[900] text-center text-[48px] leading-[80px] lg:text-[100px] md:leading-[130px] pt-[20px] tracking-[3px]">0/10000</div>
+        <div className="flex justify-center font-[900] text-center text-[48px] leading-[80px] lg:text-[100px] md:leading-[130px] pt-[20px] tracking-[3px]">{minted.toString()}/{supply.toString()}</div>
         <div className={(account ? "opacity-1" : "opacity-50") + " transition-all duration-300 ease-in-out flex justify-center font-[400] text-center text-[16px] leading-[20.8px] text-[#0094FF] mt-[10px]"}>
           {account ? abridgeAddress(account) : "Please Connect your Wallet"}
         </div>
-        <div className="flex justify-center font-[400] text-center text-[40px] leading-[52px] lg:text-[50px] md:leading-[65px] pt-[20px] tracking-[3px]">{balance.toString() + " ETH"}</div>
+        <div className="flex justify-center font-[400] text-center text-[40px] leading-[52px] lg:text-[50px] md:leading-[65px] pt-[20px] tracking-[3px]">{(pPrice * count).toFixed(2) + " ETH"}</div>
         <div className="flex justify-center font-[400] text-center text-[16px] leading-[21px] lg:text-[14px] md:leading-[18.2px] pt-[20px] tracking-[1px]">(Excluding gas fees)</div>
       </div>
       <div className="flex justify-center items-center z-[100] font-[900] text-[40px] mt-[52px] space-x-[20px] md:space-x-[50px]">
@@ -52,7 +99,7 @@ const Mint = () => {
         <ControlButton key="Connect Wallet" clickHandler={handleConnect} buttonCaption={pending ? "Pending" : "Connect"} />
       </div>
       <div className={(connected ? "flex" : "hidden") + " justify-center mt-[70px]"}>
-        <ControlButton key="Mint token" clickHandler={handleMint} buttonCaption={pending ? "Pending" : "Mint"} />
+        <ControlButton key="Mint token" clickHandler={handlePMint} buttonCaption={pending ? "Pending" : "Mint"} />
       </div>
       <div className={(connected ? "flex" : "hidden") + " justify-center mt-[20px]"}>
         <div className="transition-all duration-300 ease-in-out flex justify-center cursor-pointer font-[700] text-center text-[16px] leading-[20.8px] text-[#0094FF] opacity-80 hover:opacity-100 active:opacity-75" onClick={disconnect}>Disconnect</div>

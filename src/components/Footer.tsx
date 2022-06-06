@@ -1,4 +1,4 @@
-import FOOTER from "../configs/menu.json"
+import FOOTER from "../constants/menu.json"
 import DiscordIcon from "../assets/svg/discord";
 // import OpenSeaIcon from "../assets/svg/opensea";
 // import InstagramIcon from "../assets/svg/instagram";

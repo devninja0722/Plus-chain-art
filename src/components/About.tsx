@@ -1,4 +1,4 @@
-import HEADER from "../configs/menu.json"
+import HEADER from "../constants/menu.json"
 
 const About = () => {
   const anchorStyle = "underline transition-all duration-150 ease-out underline-offset-2 hover:underline-offset-[3px]"

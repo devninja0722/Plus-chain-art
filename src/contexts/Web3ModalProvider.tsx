@@ -67,7 +67,7 @@ export const Web3ModalProvider = (props: any) => {
     setConnected(false)
     setProvider(null)
 
-    toast.warning(`Wallet is disconnected`, {
+    toast.warning(`Wallet is not connected!`, {
       position: toast.POSITION.BOTTOM_RIGHT,
       autoClose: 4000,
       closeOnClick: true,

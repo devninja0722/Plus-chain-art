@@ -1,4 +1,4 @@
-import ROADMAP from "../configs/roadmap.json";
+import ROADMAP from "../constants/roadmap.json";
 import PhaseItem from "./utils/PhaseItem";
 import { PhaseBranch12, PhaseBranch23, PhaseBranch34, PhaseBranch41, PhaseMDBrach12, PhaseMDBrach21 } from "../assets/svg/phasebranch";
 

@@ -1,4 +1,4 @@
-import HEADER from "../configs/menu.json"
+import HEADER from "../constants/menu.json"
 import DiscordIcon from "../assets/svg/discord";
 // import OpenSeaIcon from "../assets/svg/opensea";
 // import InstagramIcon from "../assets/svg/instagram";

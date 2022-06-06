@@ -1,5 +1,5 @@
 import Accordion from "./utils/Accordion";
-import FAQDATA from "../configs/faq.json";
+import FAQDATA from "../constants/faq.json";
 
 const FAQs = () => {
   return (
