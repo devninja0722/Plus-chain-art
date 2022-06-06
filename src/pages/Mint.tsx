@@ -59,7 +59,6 @@ const Mint = () => {
   }
 
   useEffect(() => {
-
     const getContractInfo = async () => {
       let EthereumChainId = process.env.REACT_APP_ENV === "development" ? ChainId.Rinkeby : ChainId.Ethereum
 
@@ -71,6 +70,12 @@ const Mint = () => {
 
       let _mintID = await pulseNFT.nextMintId();
       setMinted(Number(_mintID));
+
+      let _pPrice = await pulseNFT.pMintPrice();
+      setPPrice(Number(_pPrice / Math.pow(10, 18)));
+
+      let _wlPrice = await pulseNFT.wlMintPrice();
+      setWLPrice(Number(_wlPrice));
 
       let _totalSupply = await pulseNFT.totalSupply();
       setSupply(Number(_totalSupply));
