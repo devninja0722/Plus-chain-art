@@ -71,7 +71,8 @@ const Mint = () => {
     try {
       let wlHashedAddrs = PULSE_WL.map((addr) => keccak256(addr));
       let wlMerkleTree = new MerkleTree(wlHashedAddrs, keccak256, { sortPairs: true });
-      // let wlMerkleRoot = wlMerkleTree.getHexRoot();
+      let wlMerkleRoot = wlMerkleTree.getHexRoot();
+      console.log(wlMerkleRoot)
 
       let hashedAddr = keccak256(account);
       let wlProof = wlMerkleTree.getHexProof(hashedAddr);
@@ -128,7 +129,8 @@ const Mint = () => {
 
       if (account) {
         let _isClaimed = await pulseNFT.isClaimed(account);
-        setWLed(!_isClaimed && PULSE_WL.find(item => item === account) !== null);
+        console.log(_isClaimed, '------')
+        setWLed(!_isClaimed && PULSE_WL.find(item => item === account) !== undefined);
       }
     }
 
