@@ -11,7 +11,7 @@ type Props = {
   offset: any;
 };
 
-const pulseContract = "https://etherscan.io/address/0x8a1658607793276301a2769bf49b16d98ac16fd8"
+const pulseContract = "https://rinkeby.etherscan.io/address/0xef213034db40d30ea2eb4ebc18a1fab278ba663b"
 
 const Hero = ({ offset }: Props) => {
   // const navigate = useNavigate();
