@@ -18,9 +18,9 @@ const Mint = () => {
   const { connect, disconnect, account, connected, signer } = useContext(Web3ModalContext);
 
   const [minted, setMinted] = useState(0);
-  const [supply, setSupply] = useState(10000);
-  const [wlPrice, setWLPrice] = useState(0.03);
-  const [pPrice, setPPrice] = useState(0.05);
+  const [supply, setSupply] = useState(4444);
+  const [wlPrice, setWLPrice] = useState(0.2);
+  const [pPrice, setPPrice] = useState(0.3);
   const [count, setCount] = useState(1);
   const [isWLed, setWLed] = useState(false);
   const [isPaused, setPaused] = useState(false);

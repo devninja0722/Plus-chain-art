@@ -5,20 +5,20 @@ import richard3 from "../assets/img/hero/richard-03.png";
 import richard4 from "../assets/img/hero/richard-04.png";
 import PulseChainArtLogoBlackBg from "../assets/svg/PulseChainArt-Logo-BlackBg.svg"
 import ControlButton from "./utils/ControlButton";
-// import { useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 type Props = {
   offset: any;
 };
 
-const pulseContract = "https://rinkeby.etherscan.io/address/0xef213034db40d30ea2eb4ebc18a1fab278ba663b"
+const pulseContract = "https://etherscan.io/address/0x273e6347e5E887730D93bd306aAAD6D7cA88e750"
 
 const Hero = ({ offset }: Props) => {
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
 
-  // const onMint = () => {
-  //   navigate('/mint');
-  // };
+  const onMint = () => {
+    navigate('/mint');
+  };
 
   return (
     <div className="justify-center bg-cover bg-[url('./assets/img/hero/md-bg.png')] lg:bg-none pb-[50px] lg:pb-[0px] -mt-20" id="home">
@@ -31,12 +31,12 @@ const Hero = ({ offset }: Props) => {
         <img src={richard3} alt="richard3" style={{ transform: `rotate(${offset * 0.01}deg) translateX(${offset * 0.2}px)`, filter: `blur(${offset * 0.008}px)` }} className="hidden transition-all ease-in lg:flex duration-350" />
       </div>
       <div className="grid lg:flex justify-center mt-[-15px] z-[10] lg:mt-[-15px] gap-y-[0px] space-x-[0px] lg:space-x-[30px]">
-        {/* <ControlButton key="Mint Control" clickHandler={onMint} buttonCaption="Mint" /> */}
         <a href={LINKS["telegram-link"]} target="_blank" rel="noreferrer" className="z-50"><ControlButton key="Telegram Control" buttonCaption="Join Telegram" /></a>
         <a href={LINKS["twitter-link"]} target="_blank" rel="noreferrer" className="z-50"><ControlButton key="Twitter Control" buttonCaption="Join Twitter" /></a>
         <a href={LINKS["discord-link"]} target="_blank" rel="noreferrer" className="z-50"><ControlButton key="Discord Control" buttonCaption="Join Discord" /></a>
       </div>
       <div className="flex justify-center">
+        <ControlButton key="Mint Control" clickHandler={onMint} buttonCaption="Mint" />
         <a href={pulseContract} target="_blank" rel="noreferrer" className="z-50"><ControlButton key="Contract" buttonCaption="View Contract" /></a>
       </div>
     </div>
