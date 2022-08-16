@@ -182,8 +182,8 @@ const Mint = () => {
         <div className="transition-all duration-300 ease-in-out flex justify-center cursor-pointer font-[700] text-center text-[16px] leading-[20.8px] text-[#0094FF] opacity-80 hover:opacity-100 active:opacity-75" onClick={disconnect}>Disconnect</div>
       </div>
       <div className="flex place-content-between items-end w-[calc(100vw)] h-[calc(100vh)] fixed z-[-100] top-0 bg-[url('./assets/img/mint/mintBG.png')] no-repeat bg-right bg-cover md:bg-cover lg:bg-cover">
-        <div className="fixed left-[-120px] md:left-[130px] lg:left-[180px] min-w-[358px] min-h-[435px]"><img src={richard01} alt="" /></div>
-        <div className="fixed right-[-120px] md:right-[130px] lg:right-[180px] min-w-[358px] min-h-[435px]"><img src={richard02} alt="" /></div>
+        <div className="fixed left-[-120px] md:left-[130px] lg:left-[110px] min-w-[358px] min-h-[435px]"><img src={richard01} alt="" /></div>
+        <div className="fixed right-[-120px] md:right-[130px] lg:right-[110px] min-w-[358px] min-h-[435px]"><img src={richard02} alt="" /></div>
         <div style={{width: "100%", height: "100%", background: "#ffffff2e", zIndex: 1}}></div>
       </div>
       <div className="flex md:hidden lg:hidden fixed z-[-10] w-[calc(100vw)] h-[146px] bottom-0 bg-[url('./assets/img/mint/bottom.png')]"></div>
