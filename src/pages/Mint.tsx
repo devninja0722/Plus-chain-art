@@ -155,7 +155,7 @@ const Mint = () => {
       </div>
       <div className="mt-[20px] mb-[40px] md:mt-[30px] grid justify-center">
         <div className="flex font-[200] max-w-[360px] md:max-w-[450px] text-center text-[#FAFAFA] md:[#FFFFFF] lg:text-[#FFFFFF] text-[10px] leading-[13px] md:text-[14px] md:leading-[16px] pt-[20px] tracking-[0px]">
-          Please make sure you connected to the right network (Ethereum Mainnet) and the correct address. Please note: Once you make the ourchase, you cannot undo this action.
+          Please make sure that you are connected to the right network and address (Ethereum Mainnet). Once you make the purchase, your NFT will be automatically available on OpenSea.io
         </div>
         <div className="flex font-[200] max-w-[360px] md:max-w-[450px] text-center text-[#FAFAFA] md:[#FFFFFF] lg:text-[#FFFFFF] text-[10px] leading-[13px] md:text-[14px] md:leading-[16px] pt-[20px] tracking-[0px]">
           We have set the gas limit to 285000 for the contract to successfully mint your NFT. We recommend that you don’t lower the gas limit.
@@ -184,7 +184,7 @@ const Mint = () => {
       <div className="flex place-content-between items-end w-[calc(100vw)] h-[calc(100vh)] fixed z-[-100] top-0 bg-[url('./assets/img/mint/mintBG.png')] no-repeat bg-right bg-cover md:bg-cover lg:bg-cover">
         <div className="fixed left-[-120px] md:left-[130px] lg:left-[110px] min-w-[358px] min-h-[435px]"><img src={richard01} alt="" /></div>
         <div className="fixed right-[-120px] md:right-[130px] lg:right-[110px] min-w-[358px] min-h-[435px]"><img src={richard02} alt="" /></div>
-        <div style={{width: "100%", height: "100%", background: "#ffffff2e", zIndex: 1}}></div>
+        <div style={{ width: "100%", height: "100%", background: "#ffffff2e", zIndex: 1 }}></div>
       </div>
       <div className="flex md:hidden lg:hidden fixed z-[-10] w-[calc(100vw)] h-[146px] bottom-0 bg-[url('./assets/img/mint/bottom.png')]"></div>
     </>
