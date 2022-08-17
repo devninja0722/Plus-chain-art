@@ -155,10 +155,10 @@ const Mint = () => {
       </div>
       <div className="mt-[20px] mb-[40px] md:mt-[30px] grid justify-center">
         <div className="flex font-[200] max-w-[360px] md:max-w-[450px] text-center text-[#FAFAFA] md:[#FFFFFF] lg:text-[#FFFFFF] text-[10px] leading-[13px] md:text-[14px] md:leading-[16px] pt-[20px] tracking-[0px]">
-          Please make sure that you are connected to the right network and address (Ethereum Mainnet). Once you make the purchase, your NFT will be automatically available on OpenSea.io
+          Please make sure that you are connected to the right network and address (Ethereum Mainnet). Once you make the purchase, your NFT will be automatically available on OpenSea.io!
         </div>
         <div className="flex font-[200] max-w-[360px] md:max-w-[450px] text-center text-[#FAFAFA] md:[#FFFFFF] lg:text-[#FFFFFF] text-[10px] leading-[13px] md:text-[14px] md:leading-[16px] pt-[20px] tracking-[0px]">
-          We have set the gas limit to 285000 for the contract to successfully mint your NFT. We recommend that you don’t lower the gas limit.
+          We have set the gas limit to 285000 for the contract to successfully mint your NFT and recommend that you do not lower this gas limit to enable a successful transaction.
         </div>
       </div>
       <div className="flex justify-center items-center z-[100] font-[900] text-[40px] mt-[52px] space-x-[20px] md:space-x-[50px]">
